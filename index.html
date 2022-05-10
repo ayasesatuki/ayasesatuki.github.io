@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sample1</title>
-        <meta charset = " utf-8">
+        <meta charset="utf-8">
+        <title>WebGLチュートリアル</title>
     </head>
-    
-    <body>
-        <script type ="text/javascript">
-            today = new today;
-            document.write(today);
-            document.write("<h1> コンピュータグラフィックス</h1>");
-            document.write("<p>担当　中村直人</p>");
-            document.write("<p>この授業ではWebGLを用いてコンピュータグラフィックスの作成をします。</p>");
-            
-            var image = new image(128,128);
-            image.src = "gamba.png";
-            document.body.appendChild(image.src);
-        </script>
+    ＜<body>
+        <canvas id = "glCanvas" width = "640" height = "480"></canvas>
     </body>
+    
+    <script>
+        function main(){
+        //https://github.com/mdn/translated-content/blob/main/files/ja/web/api/webgl_api/tutorial/getting_started_with_webgl/index.md?plain=1#L12
+        //参照コード
+        const canvas = document.querySelector("#glCanvas");
+        const gl = canvas.getContext("webgl");
+    
+        if (gl == null){
+            alert("WebGL を初期化できません。ブラウザーまたはマシンが対応していない可能性があります")
+        }
+        gl.clearColor(0.0,0.,0.0,1.0);
+        gl.clear(gl.COLOR_BUFFER_8BIT);
+    
+    }   
+    </script>
 </html>
